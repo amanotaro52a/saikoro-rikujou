@@ -1,0 +1,19 @@
+<%= render 'shared/content_card' do %>
+  <div class="text-center mb-8">
+    <h1 class="text-5xl md:text-5xl font-extrabold  text-black mb-5">
+      出目表
+    </h1>
+    <div class="lists space-y-6 text-center mb-8 bg-black text-white lg:p-12">
+      <% distances = ['50m', '100m', '400m', '800m', '1500m', '42.195km'] %>
+      <% distances.each_with_index do |distance, index| %>
+        <div class="flex items-center justify-center gap-6">
+          <img src="<%= asset_path("dice#{index + 1}.jpg") %>" 
+               class="w-16 h-16 object-cover shadow-lg">
+          <h1 class="text-5xl md:text-5xl font-extrabold"><%= distance %></h1>
+        </div>
+      <% end %>
+    </div> 
+    <h2 class="text-3xl font-semibold text-black mb-5">On your marks</h2>
+    <p class="font-medium text-black mb-5">入念に準備運動ができたらサイコロを振りましょう!</p>
+  </div>
+<% end %>

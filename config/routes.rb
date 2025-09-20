@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "static_pages#index"
+  get "rule", to: "rule_pages#rule", as: "rule_pages_rule"
 end
