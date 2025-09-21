@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.cache_classes = true
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
@@ -51,8 +51,9 @@ Rails.application.configure do
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
   config.active_job.queue_adapter = :solid_queue
-  config.solid_queue.connects_to = { database: { writing: :queue } }
-
+  # config.solid_queue.connects_to = { database: { writing: :queue } }
+  config.assets.compile = true
+  config.public_file_server.enabled = true
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
